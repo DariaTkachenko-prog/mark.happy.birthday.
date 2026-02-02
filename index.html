@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Марк с Днем Рождения!</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="🎁 Поздравляю с Днем рождения! Нажми на картинку — тебя ждет поздравление🎈" />
+  <meta property="og:image" content="https://dariatkachenko-prog.github.io/mark.happy.birthday.vercel.preview.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://dariatkachenko-prog.github.io/https://mark.happy.birthday.vercel.app/preview.jpg/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="🎁 Поздравляю с Днем рождения! Нажми на изображение — тебя ждет поздравление🎈" />
+  <meta name="twitter:image" content="https://mark.happy.birthday.vercel./preview.jpg" />
+
+  <!-- Email Preview -->
+  <meta name="description" content="🎁 Поздравляю с Днем рождения! Нажми на изображение — тебя ждет поздравление🎈" />
+  <meta name="keywords" content="День рождение, поздравление, подарок, сюрприз, празднование" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- External styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --main-font: 'Dancing Script', cursive, sans-serif;
+      --deep-violet: #FFFFFF; /* дуже темно-сиреневий */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--main-font);
+      color: var(--deep-violet);
+    }
+
+    .h1-line,
+    .click-text,
+    .congrats-text p {
+      font-family: var(--main-font);
+    }
+
+    .hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      .click-text { font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Canvas для конфеті -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <div class="card">
+    <h1>
+      <span class="h1-line line1">МАРК🎉</span>
+      <span class="h1-line line2">ПОЗДРАВЛЯЮ ТЕБЯ С ДНЁМ РОЖДЕНИЯ!</span>
+    </h1>
+
+    <div class="emoji-container" id="emoji-wrapper" aria-label="Натисни на подарунок, щоб побачити привітання">
+      <!-- Показуємо кульку; якщо зображення відсутнє, падаємо назад на старий smiley.png -->
+      <img src="balloon.png" onerror="this.onerror=null;this.src='smiley.png';" alt="Кулька" id="smiley" class="floating" role="button" aria-label="Кулька — натисни" tabindex="0" />
+      <span class="click-text">Нажми на картинку 👇</span>
+    </div>
+
+    <div class="congrats-wrapper hidden" aria-live="polite">
+      <div class="congrats-text">
+        <div class="congrats-text-inner">
+          <p>
+           <span class="line">С Днём Рождения,друг!</span><br />
+          <span class="line">Пусть будет много радости и игр! </span><br />
+          <span class="line">Желаю крутых побед и удачи во всём </span><br />
+          <span class="line">И чтобы мечты сбывались каждый день! </span><br /><br />
+          
+          
+         
+
+            <span class="line signature">Твой друг Даня.</span>
+          </p>
+        </div>
+      </div>
+      <div class="congrats-photo">
+        <img src="congrats-image.png" alt="Привітальне фото" />
+      </div>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="music.mp3" loop></audio>
+  <audio id="open-sound" src="open.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
