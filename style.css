@@ -370,7 +370,7 @@ h1 {
 /* === Mobile tune: raise blocks and avoid overlap === */
 @media (max-width: 768px){
   .congrats-wrapper{
-    margin: -250px auto 18px !important;
+    margin: -240px auto 18px !important;
     padding: 0 10px;
   }
   .congrats-text{
@@ -378,6 +378,6 @@ h1 {
     text-align: center !important;
   }
   .congrats-photo{
-    margin-top: -200px !important;
+    margin-top: -180px !important;
   }
 }
